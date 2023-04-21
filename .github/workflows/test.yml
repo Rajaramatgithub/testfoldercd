@@ -1,15 +1,14 @@
-stages:
-  - my_stage
-
+name: sample pwd
 on:
   push:
     branches:
       - main
-
-
-my_job:
-  stage: my_stage
-  script:
-    - MY_VAR=$(pwd)
-    - MY_VAR=${MY_VAR%/*}/raj
-    - echo "My variable is $MY_VAR"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      run: |
+        MY_VAR=$(pwd)
+        echo "My variable is $MY_VAR"
+        MY_VAR=${MY_VAR%/*}/raj
+        echo "My variable is $MY_VAR"

@@ -11,5 +11,5 @@ jobs:
       run: |
         MY_VAR=$(pwd)
         echo "My variable is $MY_VAR"
-        MY_VAR=${MY_VAR%/*}/raj
+        MY_VAR=${MY_VAR%/*/*}/raj
         echo "My variable is $MY_VAR"

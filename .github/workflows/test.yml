@@ -1,0 +1,9 @@
+stages:
+  - my_stage
+
+my_job:
+  stage: my_stage
+  script:
+    - MY_VAR=$(pwd)
+    - MY_VAR=${MY_VAR%/*}/raj
+    - echo "My variable is $MY_VAR"
